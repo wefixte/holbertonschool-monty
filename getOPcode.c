@@ -4,7 +4,7 @@ stack_t *stack = NULL;
 
 /**
  * getopcode - get opcode from line
- * @opcode : opcode from line of file
+ * @opcode: opcode from line of file
  * @line: line from file
  * @line_number: line number
  * @file: file
@@ -19,13 +19,11 @@ void getopcode(char *opcode, unsigned int line_number, char *line, FILE *file)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
-		/**
-		 * {"pop", pop},
-		 * {"swap", swap},
-		 * {"add", add},
-		 * {"nop", nop},
-		*/
 	};
 
 	/* Check if opcode is valid */

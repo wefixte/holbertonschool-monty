@@ -22,14 +22,6 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	num = strtol(token, &endptr, 10);
-
-	if (*endptr != '\0')
-	{
-		/*bloque à cette ligne*/
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
 	newNode = malloc(sizeof(stack_t));
 
 	if (newNode == NULL)
