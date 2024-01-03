@@ -52,4 +52,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void freeArg(stack_t **stack, char *line, FILE *file);
 void freeStack(stack_t **stack);
 
+/*Global Variable*/
+extern stack_t *stack;
+
 #endif /* MONTY_H */
