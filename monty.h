@@ -8,6 +8,9 @@
 #include <unistd.h>
 #include <ctype.h>
 
+/*Prototypes*/
+int main(int argc, char *argv[]);
+
 /* Structures */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
