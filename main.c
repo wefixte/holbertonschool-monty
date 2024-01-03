@@ -41,8 +41,6 @@ int main(int argc, char *argv[])
 		if (opcode != NULL && opcode[0] != '#')
 			getopcode(opcode, line_number, line, file);
 	}
-	/*TODO : function to free the structure*/
-	free(line);
-	fclose(file);
+	freeArg(&stack, line, file);
 	exit(EXIT_SUCCESS);
 }
