@@ -38,8 +38,7 @@ int main(int argc, char *argv[])
 		if (strcmp(line, "\n") == 0)
 			continue;
 		line = strtok(line, "\n");
-		/* Check if line is a comment */
-		if (opcode != NULL && line[0] != '#')
+		if (line != NULL)
 			getopcode(line, line_number, file);
 	}
 	/*TODO : function to free the structure*/

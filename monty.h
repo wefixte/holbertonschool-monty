@@ -8,12 +8,6 @@
 #include <unistd.h>
 #include <ctype.h>
 
-/*Prototypes*/
-int main(int argc, char *argv[]);
-void getopcode(char *line, unsigned int line_number, FILE *file);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-
 /* Structures */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -46,5 +40,11 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/*Prototypes*/
+int main(int argc, char *argv[]);
+void getopcode(char *line, unsigned int line_number, FILE *file);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

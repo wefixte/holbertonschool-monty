@@ -10,21 +10,23 @@
 
 void getopcode(char *line, unsigned int line_number, FILE *file)
 {
-	int index = 0;
+	int index;
 
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
-		{NULL, NULL}
+		/**
+		 * {"pint", pint},
+		 * {"pop", pop},
+		 * {"swap", swap},
+		 * {"add", add},
+		 * {"nop", nop},
+		 * {NULL, NULL}
+		*/
 	};
 
 	/* Check if opcode is valid */
-	for (; intruction[index].opcode != NULL; index++)
+	for (index = 0; opcodes[index].opcode != NULL; index++)
 	{
 		/* Compare opcode with line */
 		if (strcmp(line, opcodes[index].opcode) == 0)
