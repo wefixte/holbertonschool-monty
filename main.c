@@ -1,5 +1,7 @@
 #include "monty.h"
 
+extern stack_t *stack;
+
 /**
  * main - read opcode from monty file
  * @argc: number of arguments
