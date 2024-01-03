@@ -10,10 +10,9 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	char *line = NULL;
+	char *line = NULL, *opcode;
 	size_t len = 0;
 	unsigned int line_number = 0;
-	ssize_t read;
 
 	/* Check if there is only one argument */
 	if (argc != 2)
@@ -31,15 +30,16 @@ int main(int argc, char *argv[])
 	}
 
 	/* Read each line of file */
-	while ((read = getline(&line, &len, file)) != -1)
+	while (getline(&line, &len, file) != -1)
 	{
 		line_number++;
 		/* Check if line is empty */
 		if (strcmp(line, "\n") == 0)
 			continue;
-		line = strtok(line, "\n");
-		if (line != NULL)
-			getopcode(line, line_number, file);
+		opcode = strtok(line, " \n\t\r");
+		/* Check if line is a comment */
+		if (opcode != NULL && opcode[0] != '#')
+			getopcode(opcode, line_number, line, file);
 	}
 	/*TODO : function to free the structure*/
 	free(line);

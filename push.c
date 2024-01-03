@@ -25,6 +25,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (*endptr != '\0')
 	{
+		/*bloque à cette ligne*/
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -47,6 +48,5 @@ void push(stack_t **stack, unsigned int line_number)
 		newNode->next = *stack;
 		(*stack)->prev = newNode;
 	}
-
 	*stack = newNode;
 }

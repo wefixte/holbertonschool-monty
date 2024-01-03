@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 #include <ctype.h>
 
 /* Structures */
@@ -42,8 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Prototypes*/
-int main(int argc, char *argv[]);
-void getopcode(char *line, unsigned int line_number, FILE *file);
+void getopcode(char *opcode, unsigned int line_number, char *line, FILE *file);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);

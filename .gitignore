@@ -7,5 +7,6 @@
 
 /.devcontainer
 /.vscode
+*.m
 settings.json
 ```

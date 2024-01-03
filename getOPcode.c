@@ -1,27 +1,30 @@
 #include "monty.h"
 
+stack_t *stack = NULL;
+
 /**
  * getopcode - get opcode from line
+ * @opcode : opcode from line of file
  * @line: line from file
  * @line_number: line number
  * @file: file
  * Return: void
 */
 
-void getopcode(char *line, unsigned int line_number, FILE *file)
+void getopcode(char *opcode, unsigned int line_number, char *line, FILE *file)
 {
-	int index;
+	size_t index;
 
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{NULL, NULL}
 		/**
-		 * {"pint", pint},
 		 * {"pop", pop},
 		 * {"swap", swap},
 		 * {"add", add},
 		 * {"nop", nop},
-		 * {NULL, NULL}
 		*/
 	};
 
@@ -29,11 +32,11 @@ void getopcode(char *line, unsigned int line_number, FILE *file)
 	for (index = 0; opcodes[index].opcode != NULL; index++)
 	{
 		/* Compare opcode with line */
-		if (strcmp(line, opcodes[index].opcode) == 0)
+		if (strcmp(opcodes[index].opcode, opcode) == 0)
 		{
 			/* Execute function depending on opcode */
 			opcodes[index].f(&stack, line_number);
-			return;
+			break;
 		}
 	}
 
