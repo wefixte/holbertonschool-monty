@@ -10,6 +10,7 @@
 
 /*Prototypes*/
 int main(int argc, char *argv[]);
+void getopcode(char *line, unsigned int line_number, FILE *file);
 
 /* Structures */
 /**
