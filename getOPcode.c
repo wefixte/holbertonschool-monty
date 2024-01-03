@@ -1,5 +1,7 @@
 #include "monty.h"
 
+stack_t *stack = NULL;
+
 /**
  * getopcode - get opcode from line
  * @opcode: opcode from line of file
@@ -41,7 +43,7 @@ void getopcode(char *opcode, unsigned int line_number, char *line, FILE *file)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, line);
 		/* TODO : function to free */
-		freeArg(&stack, line, file);
+		free(line);
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}

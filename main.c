@@ -1,4 +1,5 @@
 #include "monty.h"
+#include "globalVariable.h"
 
 /**
  * main - read opcode from monty file
